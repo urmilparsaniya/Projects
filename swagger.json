@@ -1,0 +1,416 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Sales Hub",
+    "description": "Sales",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "produces": ["application/json"],
+  "schemes": ["http", "https"],
+  "consumes": ["application/x-www-form-urlencoded", "multipart/form-data"],
+  "securityDefinitions": {
+    "UserAuthorization": {
+      "type": "apiKey",
+      "name": "login-token",
+      "in": "header"
+    }
+  },
+  "responses": {
+    "UnauthorizedResponse": {
+      "description": "UNAUTHORIZED: 401",
+      "properties": {
+        "message": {
+          "type": "string",
+          "example": "UNAUTHORIZED_ERROR_MESSAGE"
+        },
+        "status_code": {
+          "type": "number",
+          "example": "2"
+        },
+        "request_status_code": {
+          "type": "number",
+          "example": "401"
+        }
+      }
+    },
+    "NotFoundResponse": {
+      "description": "NOT_FOUND: 404",
+      "properties": {
+        "message": {
+          "type": "string",
+          "example": "NOT_FOUND_ERROR_MESSAGE"
+        },
+        "status_code": {
+          "type": "number",
+          "example": "2"
+        },
+        "request_status_code": {
+          "type": "number",
+          "example": "404"
+        }
+      }
+    },
+    "TooManyRequestsResponse": {
+      "description": "TOO_MANY_REQUESTS: 429",
+      "properties": {
+        "message": {
+          "type": "string",
+          "example": "TOO_MANY_REQUESTS_ERROR_MESSAGE"
+        },
+        "status_code": {
+          "type": "number",
+          "example": "2"
+        },
+        "request_status_code": {
+          "type": "number",
+          "example": "429"
+        }
+      }
+    },
+    "ServerErrorResponse": {
+      "description": "SERVER_ERROR: 500",
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "example": "SERVER_ERROR_MESSAGE"
+        },
+        "status_code": {
+          "type": "number",
+          "example": "2"
+        },
+        "request_status_code": {
+          "type": "number",
+          "example": "500"
+        }
+      }
+    },
+    "BadGatewayResponse": {
+      "description": "BAD_GATEWAY: 502",
+      "properties": {
+        "message": {
+          "type": "string",
+          "example": "BAD_GATEWAY_ERROR_MESSAGE"
+        },
+        "status_code": {
+          "type": "number",
+          "example": "2"
+        },
+        "request_status_code": {
+          "type": "number",
+          "example": "502"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/api/v1/user/login": {
+      "post": {
+        "security": [],
+        "operationId": "api-userLogin",
+        "tags": ["User"],
+        "description": "User Login",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "type": "string",
+            "required": true,
+            "description": "Email for authentication during the login process.",
+            "example": "test@gmail.com"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "type": "string",
+            "required": true,
+            "description": "Password for authentication during the login process.",
+            "example": "Test@123"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User Login"
+          }
+        }
+      }
+    },
+    "/api/v1/user/user-details": {
+      "get": {
+        "security": [{ "UserAuthorization": [] }],
+        "operationId": "api-userDetails",
+        "tags": ["User"],
+        "description": "User Info",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "User details"
+          }
+        }
+      }
+    },
+    "/api/v1/user/update-user": {
+      "put": {
+        "security": [{ "UserAuthorization": [] }],
+        "operationId": "api-userUpdate",
+        "tags": ["User"],
+        "description": "User update",
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "formData",
+            "type": "string",
+            "required": true,
+            "description": "Updated user name",
+            "example": "Ethan"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User details"
+          }
+        }
+      }
+    },
+    "/api/v1/account/account-create": {
+      "post": {
+        "security": [
+          {
+            "UserAuthorization": []
+          }
+        ],
+        "operationId": "api-accountCreate",
+        "tags": ["Account"],
+        "description": "Account create",
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "formData",
+            "type": "string",
+            "required": true,
+            "description": "User Name.",
+            "example": "ABC"
+          },
+          {
+            "name": "role",
+            "in": "formData",
+            "type": "string",
+            "required": true,
+            "description": "2: SubAdmin | 3: SalesManager | 4: Employee",
+            "example": "2"
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "type": "string",
+            "required": true,
+            "description": "Email for authentication during the login process.",
+            "example": "test@gmail.com"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "type": "string",
+            "required": true,
+            "description": "Password for authentication during the login process.",
+            "example": "Test@123"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Account create"
+          }
+        }
+      }
+    },
+    "/api/v1/sales/sales-record-create": {
+      "post": {
+        "security": [
+          {
+            "UserAuthorization": []
+          }
+        ],
+        "operationId": "api-salesRecordCreate",
+        "tags": ["Sales"],
+        "description": "Sales record create",
+        "parameters": [
+          {
+            "name": "product_name",
+            "in": "formData",
+            "type": "string",
+            "required": true,
+            "description": "Product Name.",
+            "example": "ABC"
+          },
+          {
+            "name": "purchase_from",
+            "in": "formData",
+            "type": "number",
+            "required": true,
+            "description": "1: Store | 2: Online",
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sales record create"
+          }
+        }
+      }
+    },
+    "/api/v1/sales/update-sales-records": {
+      "put": {
+        "security": [
+          {
+            "UserAuthorization": []
+          }
+        ],
+        "operationId": "api-salesRecordUpdate",
+        "tags": ["Sales"],
+        "description": "Sales record update",
+        "parameters": [
+          {
+            "name": "sales_id",
+            "in": "formData",
+            "type": "string",
+            "required": true,
+            "description": "Sales ID.",
+            "example": "0b5ac0c4-1214-4c9d-8f09-a487834fcf8d"
+          },
+          {
+            "name": "product_name",
+            "in": "formData",
+            "type": "string",
+            "required": true,
+            "description": "Product Name.",
+            "example": "ABC"
+          },
+          {
+            "name": "purchase_from",
+            "in": "formData",
+            "type": "number",
+            "required": true,
+            "description": "1: Store | 2: Online",
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sales record update"
+          }
+        }
+      }
+    },
+    "/api/v1/sales/update-review-status": {
+      "put": {
+        "security": [
+          {
+            "UserAuthorization": []
+          }
+        ],
+        "operationId": "api-salesReviewStatusUpdate",
+        "tags": ["Sales"],
+        "description": "Sales review status update",
+        "parameters": [
+          {
+            "name": "sales_id",
+            "in": "formData",
+            "type": "string",
+            "required": true,
+            "description": "Sales ID.",
+            "example": "0b5ac0c4-1214-4c9d-8f09-a487834fcf8d"
+          },
+          {
+            "name": "ready_for_review",
+            "in": "formData",
+            "type": "number",
+            "required": true,
+            "description": "1: Yes | 2: No",
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sales record update review status"
+          }
+        }
+      }
+    },
+    "/api/v1/sales/approve-salesRecord-salesManager": {
+      "put": {
+        "security": [
+          {
+            "UserAuthorization": []
+          }
+        ],
+        "operationId": "api-salesRecordApproveSalesManager",
+        "tags": ["Sales"],
+        "description": "Sales record approve sales manager",
+        "parameters": [
+          {
+            "name": "sales_id",
+            "in": "formData",
+            "type": "string",
+            "required": true,
+            "description": "Sales ID.",
+            "example": "0b5ac0c4-1214-4c9d-8f09-a487834fcf8d"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sales record approved by sales manager"
+          }
+        }
+      }
+    },
+    "/api/v1/sales/approve-salesRecord-subAdmin": {
+      "put": {
+        "security": [
+          {
+            "UserAuthorization": []
+          }
+        ],
+        "operationId": "api-salesRecordApproveSubAdmin",
+        "tags": ["Sales"],
+        "description": "Sales record approve sub admin",
+        "parameters": [
+          {
+            "name": "sales_id",
+            "in": "formData",
+            "type": "string",
+            "required": true,
+            "description": "Sales ID.",
+            "example": "0b5ac0c4-1214-4c9d-8f09-a487834fcf8d"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sales approved by sub admin"
+          }
+        }
+      }
+    },
+    "/api/v1/sales/sales-records": {
+      "get": {
+        "security": [
+          {
+            "UserAuthorization": []
+          }
+        ],
+        "operationId": "api-salesRecord",
+        "tags": ["Sales"],
+        "description": "Sales Records",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Sales records"
+          }
+        }
+      }
+    }
+  }
+}
