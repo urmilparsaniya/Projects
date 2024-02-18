@@ -1,0 +1,76 @@
+/* styles/header.module.css */
+.header {
+  background-color: #f3f3f3;
+  color: #fff;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  font-family: 'Arial', sans-serif;
+}
+
+.specialItem {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  margin-right: auto; /* Pushes the special item to the left */
+}
+
+.navList li {
+  padding: 10px 20px;
+}
+
+.navList li:first-child {
+  border-right: none;
+}
+
+.navList li:last-child {
+  border-left: none;
+}
+
+.navLink {
+  color: #000000;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navLink:hover {
+  color: #eea302;
+  flex-direction: initial;
+}
+
+.specialItem {
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+.orangeRound {
+  width: 20px;
+  height: 20px;
+  background-color: orange;
+  border-radius: 50%; 
+  margin-right: 10px;
+}
+
+.myName {
+  font-weight: bold;
+  font-size: 22px;
+  color: #000000;
+  font-family: 'Arial', sans-serif;
+  text-decoration: none;
+}
+
+.endItemsContainer ul {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.endItemsContainer li {
+  margin-left: 20px;
+}
+
+.endItemsContainer li:first-child {
+  margin-left: 20px;
+  margin-right: 20px;
+}

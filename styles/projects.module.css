@@ -1,0 +1,47 @@
+/* projects.module.css */
+
+.projectSection {
+  display: table;
+  justify-content: center;
+  align-items: center;
+  padding-left: 17%;
+}
+
+.projectBox {
+  display: flex;
+  margin-top: 10px;
+  justify-content: start;
+  align-items: start;
+  width: 60%;
+  padding-right: 30%;
+}
+
+.project {
+  font-family: 'Arial', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.project1Box {
+  display: flex;
+  margin-top: 10px;
+  align-items: flex-start;
+  width: 140vh;
+}
+
+.project1Name {
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.projectDescription {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  margin-top: 5px; /* Adjust as needed */
+  white-space: pre-wrap; /* Allows wrapping onto multiple lines */
+}
+
+.imageContainer {
+  margin-left: 50px;
+}
