@@ -1,13 +1,14 @@
 /* styles/footer.module.css */
 .footer {
-  padding: 20px;
+  padding: initial;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 97%;
+  font-family: 'Arial', sans-serif;
 }
 
 /* .separator {

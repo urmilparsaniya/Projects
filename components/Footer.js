@@ -7,7 +7,7 @@ const Footer = () => (
     {/* <hr className={styles.separator} /> */}
     <div className={styles.contactInfo}>
       <h3>Phone number:</h3>
-      <p>123-456-7890</p>
+      <p>+91-9638881667</p>
     </div>
     <div className={styles.contactInfo}>
       <h3>Email:</h3>

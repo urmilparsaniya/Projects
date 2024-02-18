@@ -8,6 +8,7 @@
   list-style: none;
   padding: 0;
   display: flex;
+  font-family: 'Arial', sans-serif;
 }
 
 .specialItem {
@@ -57,6 +58,7 @@
   font-size: 22px;
   color: #000000;
   font-family: 'Arial', sans-serif;
+  text-decoration: none;
 }
 
 .endItemsContainer ul {
