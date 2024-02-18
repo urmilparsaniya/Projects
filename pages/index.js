@@ -41,7 +41,7 @@ const HomePage = () => {
               <div
                 className={`${styles.roundElement} ${styles.roundElementSecond}`}
               >
-                <a href='#'>Projects</a>
+                <a href='/projects'>Projects</a>
               </div>
               <div
                 className={`${styles.roundElement} ${styles.roundElementThird}`}
