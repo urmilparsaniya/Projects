@@ -13,7 +13,7 @@ const HomePage = () => {
         <div className={styles.box}>
           <Image
             className={styles.roundedImage}
-            src="/images/car.jpg"
+            src="/images/Urmil.png"
             width={380}
             height={380}
             alt="profile-pic"
@@ -33,21 +33,24 @@ const HomePage = () => {
               </p>
             </div>
             <div className={styles.roundElements}>
-              <div
+              <a
+                href="#"
                 className={`${styles.roundElement} ${styles.roundElementFirst}`}
               >
-                <a href='#'>Resume</a>
-              </div>
-              <div
+                Resume
+              </a>
+              <a
+                href="/projects"
                 className={`${styles.roundElement} ${styles.roundElementSecond}`}
               >
-                <a href='/projects'>Projects</a>
-              </div>
-              <div
+                Projects
+              </a>
+              <a
+                href="/contact"
                 className={`${styles.roundElement} ${styles.roundElementThird}`}
               >
-                <a href='/contact'>Contact</a>
-              </div>
+                Contact
+              </a>
             </div>
           </div>
         </div>

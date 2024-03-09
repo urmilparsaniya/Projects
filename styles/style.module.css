@@ -61,9 +61,16 @@
   font-family: 'Arial', sans-serif;
   font-weight: bold;
   border: 2px solid black;
+  position: relative;
+  color: #000;
+  text-decoration: none;
 }
 
 .roundElement a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: 0; 
   color: #000;
   text-decoration: none;
@@ -85,4 +92,13 @@
 
 .roundElementThird {
   background-color: #80d8da; /* Blue */
+}
+
+.roundLink {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
 }
