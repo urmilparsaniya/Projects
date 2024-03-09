@@ -4,3 +4,4 @@ package-lock.json
 
 # next.js
 /.next/
+.vercel

@@ -27,6 +27,8 @@
   margin-top: 10px;
   align-items: flex-start;
   width: 140vh;
+  padding-right: 300px;
+  overflow-y: auto;
 }
 
 .project1Name {
@@ -44,4 +46,10 @@
 
 .imageContainer {
   margin-left: 50px;
+}
+
+.projectContainer {
+  max-height: 250px; /* Example height, adjust as needed */
+  overflow-y: auto;
+  overflow-x: hidden;
 }
