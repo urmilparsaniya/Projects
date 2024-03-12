@@ -1,27 +1,31 @@
 /* styles.module.css */
 
+/* Base styles */
+
 .roundedImage {
   border-radius: 50%;
-  filter: grayscale(100%);
+  filter: grayscale(60%);
 }
 
 .mainContent {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding-left: 17%;
+  align-items: flex-start;
+  padding: 0 10%; /* Adjust padding for centering content on laptop screens */
 }
 
 .box {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 60vh;
-  padding-right: 30%;
+  padding-right: 10%;
 }
 
 .boxContent {
   padding-left: 60px;
+  text-align: start;
 }
 
 .hello {
@@ -34,30 +38,31 @@
   font-weight: bold;
   font-size: 20px;
   font-family: 'Arial', sans-serif;
-  margin-bottom: 20px; /* Add margin bottom for spacing */
+  margin-bottom: 20px;
 }
 
 .content {
-  margin-top: 20px; /* Add margin top for spacing */
-  margin-bottom: 20px; /* Add margin bottom for spacing */
+  margin-top: 20px;
+  margin-bottom: 20px;
   font-family: 'Arial', sans-serif;
-  color: #333; /* Example styling */
+  color: #333;
 }
 
 .roundElements {
   display: flex;
-  margin-bottom: 20px; /* Add margin bottom for spacing */
+  margin-bottom: 20px;
+  justify-content: space-evenly;
 }
 
 .roundElement {
   width: 120px;
   height: 120px;
-  border-radius: 50% !important;
+  border-radius: 50%;
   background-color: #eea302;
   margin-right: 10px;
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  justify-content: center;
+  align-items: center;
   font-family: 'Arial', sans-serif;
   font-weight: bold;
   border: 2px solid black;
@@ -71,13 +76,13 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin: 0; 
+  margin: 0;
   color: #000;
   text-decoration: none;
 }
 
 .roundElementFirst {
-  background-color: #eea302; /* Yellow */
+  background-color: #eea302;
   overflow: none;
 }
 
@@ -87,18 +92,167 @@
 }
 
 .roundElementSecond {
-  background-color: #ff3b25; /* Red */
+  background-color: #ff3b25;
 }
 
 .roundElementThird {
-  background-color: #80d8da; /* Blue */
+  background-color: #80d8da;
 }
 
-.roundLink {
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
+/* Responsive styles */
+
+@media (max-width: 768px) {
+  /* Adjustments for smaller screens */
+  .mainContent {
+    padding: 0 5%;
+  }
+
+  .box {
+    padding-right: 10%;
+    padding-left: 10%;
+    height: auto;
+  }
+
+  .boxContent {
+    padding-left: 10px;
+  }
+
+  .hello {
+    font-size: 40px;
+  }
+
+  .about {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .content {
+    font-size: 14px;
+  }
+
+  .roundElement {
+    width: 100px;
+    height: 100px;
+    font-size: 14px;
+  }
+}
+
+/* Adjustments for screens with a width of 425px */
+@media (max-width: 426px) {
+  .mainContent {
+    padding: 0; /* Remove padding for mobile screens */
+  }
+
+  .box {
+    flex-direction: column; /* Stack items vertically */
+    padding-left: 60%;
+    height: auto;
+  }
+
+  .boxContent {
+    padding: 0 20px; /* Adjust padding */
+    text-align: center;
+  }
+
+  .imageContainer {
+    margin-bottom: 20px; /* Add margin between image and content */
+  }
+
+  .hello {
+    font-size: 30px; /* Reduce font size for smaller screens */
+  }
+
+  .about {
+    font-size: 16px; /* Reduce font size for smaller screens */
+  }
+
+  .content {
+    font-size: 12px; /* Reduce font size for smaller screens */
+  }
+
+  .roundElement {
+    width: 80px; /* Adjust dimensions for smaller screens */
+    height: 80px;
+    font-size: 12px; /* Reduce font size for smaller screens */
+  }
+}
+
+/* Adjustments for screens with a width of 376px */
+@media (max-width: 376px) {
+  .mainContent {
+    padding: 0; /* Remove padding for mobile screens */
+  }
+
+  .box {
+    flex-direction: column; /* Stack items vertically */
+    padding-left: 80%;
+    padding-top: 10%;
+  }
+
+  .boxContent {
+    padding: 0 20px; /* Adjust padding */
+    text-align: center;
+  }
+
+  .imageContainer {
+    margin-bottom: 20px; /* Add margin between image and content */
+  }
+
+  .hello {
+    font-size: 30px; /* Reduce font size for smaller screens */
+  }
+
+  .about {
+    font-size: 16px; /* Reduce font size for smaller screens */
+  }
+
+  .content {
+    font-size: 12px; /* Reduce font size for smaller screens */
+  }
+
+  .roundElement {
+    width: 80px; /* Adjust dimensions for smaller screens */
+    height: 80px;
+    font-size: 12px; /* Reduce font size for smaller screens */
+  }
+}
+
+/* Adjustments for screens with a width of 425px */
+@media (max-width: 321px) {
+  .mainContent {
+    padding: 0; /* Remove padding for mobile screens */
+  }
+
+  .box {
+    flex-direction: column; /* Stack items vertically */
+    padding-left: 100%;
+    padding-top: 50%;
+  }
+
+  .boxContent {
+    padding: 0 20px; /* Adjust padding */
+    text-align: center;
+  }
+
+  .imageContainer {
+    margin-bottom: 20px; /* Add margin between image and content */
+  }
+
+  .hello {
+    font-size: 30px; /* Reduce font size for smaller screens */
+  }
+
+  .about {
+    font-size: 16px; /* Reduce font size for smaller screens */
+  }
+
+  .content {
+    font-size: 12px; /* Reduce font size for smaller screens */
+  }
+
+  .roundElement {
+    width: 80px; /* Adjust dimensions for smaller screens */
+    height: 80px;
+    font-size: 12px; /* Reduce font size for smaller screens */
+  }
 }
