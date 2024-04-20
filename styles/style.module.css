@@ -2,6 +2,13 @@
 
 /* Base styles */
 
+/* styles/style.module.css */
+.animated-link {
+  /* Add your link styles here */
+  text-decoration: none;
+  color: #333;
+}
+
 .roundedImage {
   border-radius: 50%;
   filter: grayscale(60%);
