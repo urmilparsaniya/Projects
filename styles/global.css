@@ -3,3 +3,7 @@ body {
   background-color: #f3f3f3; /* Set your desired background color here */
   font-family: 'Arial', sans-serif;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
