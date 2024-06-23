@@ -45,11 +45,13 @@
 }
 
 .imageContainer {
-  margin-left: 50px;
+  width: 250px; /* Adjust width as needed */
+  height: 250px; /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.projectContainer {
-  max-height: 250px; /* Example height, adjust as needed */
-  overflow-y: auto;
-  overflow-x: hidden;
+.projectImage {
+  display: block;
 }
