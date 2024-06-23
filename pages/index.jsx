@@ -1,5 +1,6 @@
 // pages/index.js
 import React, { useEffect } from 'react';
+import Head from 'next/head';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Image from 'next/image';
@@ -33,7 +34,12 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div>
+    <>
+      <Head>
+        <title>Home - Urmil's Portfolio</title>
+        <meta name="description" content="This is the homepage of Urmil's personal portfolio. Learn more about Urmil, a software engineer." />
+        <meta name="keywords" content="Urmil, Software Engineer, Home, Portfolio" />
+      </Head>
       <Header />
       <div className="flex flex-col items-center justify-center bg-gray-100 p-4">
         <div className="flex flex-col md:flex-row items-center rounded-lg p-6 md:p-10">
@@ -42,14 +48,14 @@ const HomePage = () => {
             src="/images/Urmil.png"
             width={380}
             height={380}
-            alt="profile-pic"
+            alt="Profile picture of Urmil"
           />
           <div className="flex flex-col items-center md:items-start mt-6 md:mt-0 md:ml-10 text-center md:text-left">
             <div className="text-2xl font-bold profile-content">
-              <p>Hello</p>
+              <h1>Hello</h1>
             </div>
             <div className="text-xl font-medium mt-2 profile-content">
-              <p>A bit about me</p>
+              <h2>A bit about me</h2>
             </div>
             <div className="mt-4 text-base profile-content">
               <p>
@@ -62,18 +68,21 @@ const HomePage = () => {
               <a
                 href="/resume"
                 className={`${styles.roundElement} ${styles.roundElementFirst} resume-link`}
+                aria-label="View my resume"
               >
                 Resume
               </a>
               <a
                 href="/projects"
                 className={`${styles.roundElement} ${styles.roundElementSecond} projects-link`}
+                aria-label="View my projects"
               >
                 Projects
               </a>
               <a
                 href="/contact"
                 className={`${styles.roundElement} ${styles.roundElementThird} contact-link`}
+                aria-label="Contact me"
               >
                 Contact
               </a>
@@ -82,7 +91,7 @@ const HomePage = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
