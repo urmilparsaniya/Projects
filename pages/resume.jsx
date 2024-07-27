@@ -81,7 +81,7 @@ const ResumePage = () => {
               <h3 className="text-lg font-bold">Skills & Expertise</h3>
             </div>
             <div className="flex flex-wrap justify-end">
-              <div className="w-1/4 flex flex-col p-6 rounded-md">
+              <div className="w-3/5 flex flex-col p-6 rounded-md">
                 <ul className="list-disc">
                   <li>NodeJS</li>
                   <li>Express</li>
