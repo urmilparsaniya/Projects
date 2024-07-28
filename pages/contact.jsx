@@ -134,7 +134,7 @@ const ContactPage = () => {
                     id="firstName"
                     name="firstName"
                     className="mt-1 p-2 w-full border border-gray-300 rounded"
-                    placeholder='First Name'
+                    placeholder="First Name"
                   />
                 </div>
                 <div className={styles.lastName}>
@@ -146,7 +146,7 @@ const ContactPage = () => {
                     id="lastName"
                     name="lastName"
                     className="mt-1 p-2 w-full border border-gray-300 rounded"
-                    placeholder='Last Name'
+                    placeholder="Last Name"
                   />
                 </div>
               </div>
@@ -162,7 +162,7 @@ const ContactPage = () => {
                     id="email"
                     name="email"
                     className="mt-1 p-2 w-full border border-gray-300 rounded"
-                    placeholder='Email'
+                    placeholder="Email"
                     required
                   />
                 </div>
@@ -175,7 +175,7 @@ const ContactPage = () => {
                     id="subject"
                     name="subject"
                     className="mt-1 p-2 w-full border border-gray-300 rounded"
-                    placeholder='Subject'
+                    placeholder="Subject"
                   />
                 </div>
               </div>

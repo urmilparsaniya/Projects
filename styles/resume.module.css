@@ -1,0 +1,14 @@
+/* styles.css */
+.truncated {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 100%;
+  }
+  
+  .expandable:hover .truncated {
+    white-space: normal;
+    overflow: visible;
+  }
+  

@@ -18,14 +18,16 @@
 .contactDetailMain {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Distribute items along the main axis */
-  align-items: center; /* Align items to the start of the cross axis */
-  height: 60vh;
-  padding-right: 10%;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
 }
 
 .contactDetail {
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .contactDetail {
@@ -129,6 +131,135 @@
   border-radius: 50%; /* Make button round */
   padding: 50px 40px; /* Add padding */
   cursor: pointer; /* Show pointer on hover */
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  border: 2px solid black;
+  font-size: 15px;
+}
+
+.submitButton:hover {
+  background-color: #f3f3f3;
+  color: #333;
+}
+
+@media (min-width: 768px) {
+  .contactDetail {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.email,
+.subject {
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .email,
+  .subject {
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+}
+
+.firstName,
+.lastName {
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .firstName,
+  .lastName {
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+}
+
+.message {
+  flex: 1;
+  margin-bottom: 15px;
+}
+
+.submit {
+  flex: 1;
+}
+
+.message input[type='text'] {
+  background-color: #f3f3f3;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #333;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.email input[type='text'],
+.subject input[type='text'] {
+  background-color: #f3f3f3;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #333;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.firstName input[type='text'],
+.lastName input[type='text'] {
+  background-color: #f3f3f3;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #333;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.contactContent {
+  padding-left: 0px;
+}
+
+.contactHeading {
+  font-weight: bold;
+  font-size: 35px;
+  font-family: 'Arial', sans-serif;
+}
+
+.contactSubheading {
+  font-size: 15px;
+  margin-top: 5px;
+  font-family: 'Arial', sans-serif;
+}
+
+.contactInfoHeading {
+  font-size: 20px;
+  margin-top: 40px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+
+.contactInfo {
+  font-size: 15px;
+  margin-top: 5px;
+  font-family: 'Arial', sans-serif;
+}
+
+.submitButton {
+  background-color: #eea302;
+  color: #333;
+  border: none;
+  border-radius: 50%;
+  padding: 50px 40px;
+  cursor: pointer;
   font-family: 'Arial', sans-serif;
   font-weight: bold;
   border: 2px solid black;
